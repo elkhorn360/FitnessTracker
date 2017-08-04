@@ -56,7 +56,7 @@ app.use(session({
 }));
 
 //cors filter
-app.use(cors());
+app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 
 //initializing passport
 app.use(passport.initialize());
@@ -113,6 +113,7 @@ var upload = multer({ //multer settings
 
 /** API path that will upload the files */
 app.post('/upload', function (req, res) {
+    console.log('********** uploading *****');
     upload(req, res, function (err) {
         if (err) {
             console.error(err);
@@ -153,6 +154,7 @@ app.post('/upload', function (req, res) {
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
+    console.log('********** get *****');
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 })
 ;
