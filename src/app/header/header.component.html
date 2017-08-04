@@ -1,0 +1,11 @@
+<div id="navbar">
+    <nav [hidden]="!hasLogged" id="linkref2">
+        <!-- {{#if user}} -->
+        <a (click)="logout()" class="nav nav-pills pull-right" id="linkref1">Logout</a>
+        <a [routerLink]="['/admin']" [hidden]="!isAdmin" class="nav nav-pills pull-right" id="linkref">Admin Panel</a>
+        <a [routerLink]="['/profile']" class="nav nav-pills pull-right" id="linkref">Profile</a>
+        <a [routerLink]="['/home']" class="nav nav-pills pull-right" id="linkref">Home</a>
+        <!-- {{/if}} -->
+    </nav>
+    <h2 class="nav nav-pills pull-left" id="appname">Fitness Journal</h2>
+</div>

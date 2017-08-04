@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+    padding-top: 70px;
+    font-size: 40px;
+}
+
+#head{
+    color: blue;
+    font-weight: bold;
+}

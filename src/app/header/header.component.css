@@ -1,0 +1,74 @@
+
+
+body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    margin: 0px;
+    border: 0px;
+    background-image: url("\/assets/images/img1.jpeg");
+    background-size: cover;
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+.page-header {
+    margin-top: 0;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+#navbar {
+    width: 100%;
+    length: 100%;
+    height: 60px;
+    background-color: black;
+    opacity: .8;
+    margin-top: 0;
+    padding-top: 0px;
+    margin-left: 0px;
+    position: relative;
+}
+
+#linkref {
+    margin-top: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+#linkref2>a:hover {
+    background-color: green;
+}
+
+#linkref1 {
+    margin-top: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-right: 80px;
+}
+
+#appname {
+    padding-top: 15px;
+    margin-top: 0px;
+    border: none;
+    padding-left: 100px;
+    padding-bottom: 10px;
+    color: white;
+}

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-12">
+            <!--<h4>Administrator User Management</h4>-->
+            <div class="table-responsive">
+
+                <table id="mytable" class="table table-bordred table-striped">
+
+                    <thead  id="head">
+
+                        <th><h4>Date Uploaded</h4></th>
+                        <th><h4>Activity Type</h4></th>
+                        <th><h4>Your Comments</h4></th>
+                        <th><h4>View Activity</h4></th>
+                        
+                        <br>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let activity of activities">
+                            <td>{{ activity.date }}</td>   
+                            <td>{{ activity.activityType }}</td>
+                            <td>{{ activity.Comments }}</td>
+                            <td>
+                                
+                            </td>    
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
