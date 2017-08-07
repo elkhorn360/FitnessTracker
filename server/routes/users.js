@@ -50,8 +50,8 @@ router.get('/usersList', function(req, res) {
     });
 });
 
-router.post('/deleteUser', function(req, res) {
-    var id = req.body.id;
+router.delete('/deleteUser/:_id', function(req, res) {
+    var id = req.params._id;
     User.remove({ _id: req.body.id }, function(err) {
         if (!err) {
             res.send('removed!');
