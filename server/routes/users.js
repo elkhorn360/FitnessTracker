@@ -52,7 +52,7 @@ router.get('/usersList', function(req, res) {
 
 router.delete('/deleteUser/:_id', function(req, res) {
     var id = req.params._id;
-    User.remove({ _id: req.body.id }, function(err) {
+    User.remove({ _id: id }, function(err) {
         if (!err) {
             res.send('removed!');
         } else {
