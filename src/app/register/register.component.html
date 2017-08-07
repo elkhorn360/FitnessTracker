@@ -18,12 +18,36 @@
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="user" [(ngModel)]="userData.username" required type="text" class="form-control" name="username" value="" placeholder="Username">
+                            <input id="user" [(ngModel)]="userData.username" required type="text" class="form-control" name="username" value="" placeholder="Username" required minlength="4" maxlength="20" #name="ngModel">
+                            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                 class="alert alert-danger">
+
+                                <div *ngIf="name.errors.required">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="name.errors.minlength">
+                                    Name must be at least 4 characters long.
+                                </div>
+                                <div *ngIf="name.errors.forbiddenName">
+                                    Name cannot be Bob.
+                                </div>
+
+                            </div>
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="email" [(ngModel)]="userData.email" required type="email" class="form-control" name="email" value="" placeholder="Email">
+                            <input id="email" [(ngModel)]="userData.email" required type="email" class="form-control" name="email" value="" placeholder="Email" email="true" #email="ngModel" required>
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                 class="alert alert-danger">
+
+                                <div *ngIf="email.errors.required">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="!email?.valid">
+                                    Incorrect email pattern
+                                </div>
+                            </div>
                         </div>
 
                         <div class="input-group">
@@ -33,7 +57,7 @@
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" [(ngModel)]="userData.cpassword" required type="password" class="form-control" name="cpassword" placeholder="Confirm Password">
+                            <input id="cpassword" [(ngModel)]="userData.cpassword" required type="password" class="form-control" name="cpassword" placeholder="Confirm Password">
                         </div>
 
                         <button type="submit" class="btn btn-lg btn-success btn-block">Register</button>
