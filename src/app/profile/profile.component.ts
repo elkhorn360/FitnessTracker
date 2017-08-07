@@ -11,7 +11,9 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-    public uploader:FileUploader = new FileUploader({url:'http://localhost:3000/upload'});
+  data = { "activityName": "", "comment": ""}
+
+    public uploader:FileUploader = new FileUploader({url:'http://localhost:3000/upload',additionalParameter:this.data});
   
 
     constructor(private router: Router) { }
@@ -22,5 +24,16 @@ export class ProfileComponent implements OnInit {
     } 
   }
 
-  
+  uploadItem(event,index){
+    event.preventDefault();
+    var item = this.uploader.queue[index];
+    console.log(item);
+    item.formData = this.data;
+    //this.uploader.
+    item.upload()
+    console.log(item);
+    
+    console.log(index);
+    console.log(this.data);
+  }
 }

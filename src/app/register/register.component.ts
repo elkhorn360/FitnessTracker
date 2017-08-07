@@ -11,7 +11,8 @@ import { Cookie } from "ng2-cookies/ng2-cookies";
   
 })
 export class RegisterComponent implements OnInit {
-  userData:Object = {};
+  userData = {cpassword:"", password:""};
+  pwMisMatch:Boolean = false
   errors = ["err 1", "err 2", "err 3"]
   constructor(private servicesService: ServicesService, private router: Router) {}
 
@@ -25,10 +26,20 @@ export class RegisterComponent implements OnInit {
 
   signUp(event){
     event.preventDefault();
-    console.log(this.userData);
+
+    if(this.userData.cpassword == this.userData.password){
+      this.pwMisMatch = false
+
+    }else{
+      this.pwMisMatch = true
+    }
+
+    if(!this.pwMisMatch){
+          console.log(this.userData);
     this.servicesService.registerUser(this.userData).subscribe(response => {
         console.log(response);
     });
-     //this.router.navigate(['login']);
+     this.router.navigate(['login']);
+    }
   }
 }

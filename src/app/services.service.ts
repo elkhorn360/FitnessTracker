@@ -11,7 +11,7 @@ import 'rxjs/Rx';
 export class ServicesService {
 
   headers = new Headers({ 'Content-Type': 'application/json' });
-    options = new RequestOptions({ headers: this.headers });
+  options = new RequestOptions({ headers: this.headers });
 
   constructor(private http: Http) { }
 

@@ -34,7 +34,7 @@ app.use(expressValidator());
 
 
 router.get('/test', function(req, res) {
-    res.json({ "status": "success", "message": "Registered Successfully!" });
+    res.send({ "status": "success", "message": "Registered Successfully!" });
 });
 
 
